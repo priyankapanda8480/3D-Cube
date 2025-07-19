@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Cube with Images</title>
+    <style>
+      body {
+        margin: 0;
+        background: #111;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 800px;
+      }
+
+      .cube {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation-name: rotate;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+      }
+
+      .front {
+        transform: rotateY(0deg) translateZ(100px);
+      }
+
+      .back {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+
+      .left {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+
+      .right {
+        transform: rotatey(90deg) translateZ(100px);
+      }
+      .top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotateX(0deg) rotateY(0deg);
+        }
+        50% {
+          transform: rotateX(0deg) rotateY(360deg);
+        }
+        100% {
+          transform: rotateX(360deg) rotateY(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">
+      <img src="../public/images/kids fashion.jpg" alt="" class="face front" />
+      <img src="../public/images/book.jpg" alt="" class="face back" />
+      <img src="../public/images/women fashion.jpg" alt="" class="face left" />
+      <img src="../public/images/men fashion.jpg" alt="" class="face right" />
+      <img src="../public/images/a1.jpg" alt="" class="face top" />
+      <img src="../public/images/a15.jpg" alt="" class="face bottom" />
+    </div>
+  </body>
+</html>
